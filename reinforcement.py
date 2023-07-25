@@ -1,4 +1,4 @@
-import itertools 
+from itertools import product 
  
 class Solution:
     def create_action_dict(self, num_players, num_actions):
