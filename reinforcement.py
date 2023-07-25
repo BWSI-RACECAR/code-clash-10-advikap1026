@@ -11,6 +11,7 @@ class Solution:
             comb = [i for i in product(range(0,num_actions), repeat = num_actions)]
             for i in range(len(comb)):
                  dict[i] = comb[i]
+                 dict[comb[i]] = i
             return dict 
             pass
     
