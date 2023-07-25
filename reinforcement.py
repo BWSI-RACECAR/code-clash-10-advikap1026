@@ -7,17 +7,23 @@ class Solution:
             
             #TODO: Write code below to return a dictionary with the solution to the prompt.
             dict = {}
-            count = 0 
-            
-            originalTup = ()
-            for i in range(0,num_actions):
-                 originalTup.append(i)
-            comb = list(itertools.combinations_with_replacement(originalTup,num_actions))
-            for i in range(len(comb)):
-                 dict[i] = comb[i]
-                 dict[comb[i]] = i
+           # count = 0 
+            for i in range(num_actions**num_players):
+                dict[i] = ()
+                for j in range(num_players):
+                     dict[i] += (i//(num_actions**j)%num_actions,)
+                dict[dict[i]] = i
             return dict 
-            pass
+
+            # originalTup = ()
+            # for i in range(0,num_actions):
+            #      originalTup.append(i)
+            # comb = list(itertools.combinations_with_replacement(originalTup,num_actions))
+            # for i in range(len(comb)):
+            #      dict[i] = comb[i]
+            #      dict[comb[i]] = i
+            # return dict 
+            # pass
     
 def main():
     input1 = input()
