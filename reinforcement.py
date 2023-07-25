@@ -1,4 +1,4 @@
-from itertools import product 
+import itertools
  
 class Solution:
     def create_action_dict(self, num_players, num_actions):
@@ -8,7 +8,11 @@ class Solution:
             #TODO: Write code below to return a dictionary with the solution to the prompt.
             dict = {}
             count = 0 
-            comb = [i for i in product(range(0,num_actions), repeat = num_actions)]
+            
+            originalTup = ()
+            for i in range(0,num_actions):
+                 originalTup.append(i)
+            comb = list(itertools.combinations_with_replacement(originalTup,num_actions))
             for i in range(len(comb)):
                  dict[i] = comb[i]
                  dict[comb[i]] = i
