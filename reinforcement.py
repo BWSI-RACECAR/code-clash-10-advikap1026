@@ -1,3 +1,5 @@
+import itertools 
+ 
 class Solution:
     def create_action_dict(self, num_players, num_actions):
             #type num: two integer values
